@@ -1,0 +1,43 @@
+﻿@model BlogPost
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "Create Blog Post";
+    var bloglist = (IEnumerable<SelectListItem>)ViewData["BlogList"];
+}
+
+<form method="post">
+    <input asp-for="BlogPostId" type="hidden" />
+    <div>
+        <label asp-for="Blog.BlogId"></label>
+        <select asp-for="Blog.BlogId" asp-items="bloglist"></select>
+        <span asp-validation-for="Blog.BlogId" />
+    </div>
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+        <span asp-validation-for="Title" />
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description" />
+    </div>
+    <div>
+        <label asp-for="Content"></label>
+        <input asp-for="Content" />
+        <span asp-validation-for="Content" />
+    </div>
+    <div>
+        <input type="submit" value="create" />
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+

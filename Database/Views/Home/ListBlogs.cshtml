@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Blog>
+@{
+}
+
+@foreach(var blog in Model)
+{
+    <div>
+        <div>@blog.BlogId</div>
+        <div>@blog.Author</div>
+        <div><a herf="@blog.DomainName">@blog.Title</a></div>
+    </div>
+}
+

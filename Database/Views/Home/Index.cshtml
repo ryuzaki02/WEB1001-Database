@@ -1,0 +1,31 @@
+﻿@using Database.Models
+@model Blog
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="post">
+    <div>
+        <label asp-for="DomainName"></label>
+        <input asp-for="DomainName" />
+        <span asp-validation-for="DomainName" />
+    </div>
+    <div>
+        <label asp-for="Author"></label>
+        <input asp-for="Author" />
+        <span asp-validation-for="Author" />
+    </div>
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+        <span asp-validation-for="Title" />
+    </div>
+    <div>
+        <input type="submit" value="create"/>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
